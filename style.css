@@ -1,0 +1,481 @@
+/* Reset & Grundlagen */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #333;
+  line-height: 1.7;
+  background: #faf9f7;
+}
+
+/* ===== NAVIGATION ===== */
+#header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: transparent;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+#header.scrolled {
+  background: #fff;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+}
+
+nav {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.2rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  transition: color 0.3s;
+}
+
+#header.scrolled .logo {
+  color: #2d6a4f;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+nav ul a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+#header.scrolled nav ul a {
+  color: #444;
+}
+
+nav ul a:hover {
+  color: #74c69d;
+}
+
+#header.scrolled nav ul a:hover {
+  color: #2d6a4f;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+#header.scrolled .menu-toggle {
+  color: #333;
+}
+
+/* ===== HERO ===== */
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 500px;
+  background: url('https://ofdreamfarry.ch/wp-content/uploads/2025/01/cropped-Hintergrund_3457-scaled-2.jpeg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  padding: 2rem;
+}
+
+.hero-content h1 {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+.hero-content p {
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.btn {
+  display: inline-block;
+  background: #2d6a4f;
+  color: #fff;
+  padding: 0.85rem 2.2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.btn:hover {
+  background: #1b4332;
+  transform: translateY(-2px);
+}
+
+/* ===== ALLGEMEIN ===== */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 5rem 2rem;
+}
+
+.bg-light {
+  background: #f0f4f1;
+}
+
+.section-title {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  color: #2d6a4f;
+  margin-bottom: 0.75rem;
+  text-align: center;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: #666;
+  margin-bottom: 3rem;
+  font-size: 1.05rem;
+}
+
+/* ===== ÜBER MICH ===== */
+.section-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.section-text h2 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  color: #2d6a4f;
+  margin-bottom: 1.5rem;
+}
+
+.section-text p {
+  margin-bottom: 1rem;
+  color: #555;
+  font-size: 1.05rem;
+}
+
+.section-images {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.section-images img {
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+  object-fit: cover;
+}
+
+/* ===== UNSERE HUNDE ===== */
+.hunde-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.hund-karte {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.hund-karte:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(45,106,79,0.15);
+}
+
+.hund-karte img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+
+.hund-info {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.hund-info h3 {
+  font-size: 1.4rem;
+  color: #2d6a4f;
+  margin-bottom: 0.3rem;
+}
+
+.hund-info p {
+  color: #888;
+}
+
+.hund-details {
+  list-style: none;
+  margin-top: 0.75rem;
+  text-align: left;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.hund-details li {
+  padding: 0.25rem 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.canismaster-link {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #2d6a4f;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.canismaster-link:hover {
+  text-decoration: underline;
+}
+
+/* ===== GALERIE ===== */
+.galerie {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.galerie img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.2s;
+}
+
+.galerie img:hover {
+  transform: scale(1.02);
+}
+
+/* ===== WURF UPDATES ===== */
+.wurf-updates {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.update {
+  background: #f0f4f1;
+  border-left: 4px solid #2d6a4f;
+  border-radius: 0 12px 12px 0;
+  padding: 1.5rem;
+}
+
+.datum {
+  font-size: 0.85rem;
+  color: #2d6a4f;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.update h4 {
+  margin: 0.4rem 0 0.5rem;
+  font-size: 1.1rem;
+}
+
+.update p {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+/* ===== KONTAKT ===== */
+.kontakt-box {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.kontakt-info p {
+  margin-bottom: 0.6rem;
+  color: #555;
+}
+
+.kontakt-info a {
+  color: #2d6a4f;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.kontakt-info a:hover {
+  text-decoration: underline;
+}
+
+.kontakt-formular {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.kontakt-formular input,
+.kontakt-formular textarea {
+  padding: 0.9rem 1.2rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  background: #fff;
+  transition: border-color 0.2s;
+}
+
+.kontakt-formular input:focus,
+.kontakt-formular textarea:focus {
+  outline: none;
+  border-color: #2d6a4f;
+}
+
+/* ===== BLOG ===== */
+.blog-post {
+  background: #fff;
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+}
+
+.blog-datum {
+  font-size: 0.85rem;
+  color: #2d6a4f;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.blog-titel {
+  font-size: 1.4rem;
+  color: #333;
+  margin: 0.4rem 0 0.75rem;
+}
+
+.blog-text {
+  color: #666;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.blog-bilder {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.75rem;
+}
+
+.blog-bilder img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: #1b4332;
+  color: #a8d5bc;
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.9rem;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    padding: 1rem 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    gap: 0;
+  }
+
+  nav ul.open {
+    display: flex;
+  }
+
+  nav ul li a {
+    display: block;
+    padding: 0.8rem 2rem;
+    color: #333 !important;
+  }
+
+  nav ul li a:hover {
+    background: #f0f4f1;
+    color: #2d6a4f !important;
+  }
+
+  .section-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .section-image {
+    order: -1;
+  }
+
+  .kontakt-box {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .galerie {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+
+  .galerie img {
+    height: 150px;
+  }
+}
