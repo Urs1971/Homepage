@@ -372,6 +372,102 @@ nav ul a:hover {
   border-color: #2d6a4f;
 }
 
+/* ===== HUNDEHORT ===== */
+.hundehort-intro {
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  text-align: center;
+}
+
+.hundehort-intro p {
+  color: #555;
+  font-size: 1.05rem;
+  margin-bottom: 1rem;
+}
+
+.hundehort-angebote {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.angebot-karte {
+  background: #fff;
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.angebot-karte:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(45,106,79,0.15);
+}
+
+.angebot-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.angebot-karte h3 {
+  font-size: 1.2rem;
+  color: #2d6a4f;
+  margin-bottom: 0.75rem;
+}
+
+.angebot-karte p {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.hundehort-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.detail-block {
+  background: #f0f4f1;
+  border-radius: 16px;
+  padding: 2rem;
+}
+
+.detail-block h3 {
+  font-size: 1.3rem;
+  color: #2d6a4f;
+  margin-bottom: 1rem;
+}
+
+.detail-block ul {
+  list-style: none;
+}
+
+.detail-block li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #dde6df;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.detail-block li:last-child {
+  border-bottom: none;
+}
+
+.hundehort-cta {
+  text-align: center;
+  padding: 2rem 0 0;
+}
+
+.hundehort-cta p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
 /* ===== A-WURF ===== */
 .woche-block {
   margin-bottom: 3rem;
@@ -541,6 +637,10 @@ footer {
   .kontakt-box {
     grid-template-columns: 1fr;
     gap: 2rem;
+  }
+
+  .hundehort-details {
+    grid-template-columns: 1fr;
   }
 
   .galerie {
